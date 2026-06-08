@@ -225,7 +225,8 @@ export const App = () => {
                   <p data-cy="NoSelectedUser">No user selected</p>
                 )}
 
-                {loadingError.users && (loadingError.posts && (
+                {loadingError.users ||
+                  (loadingError.posts && (
                     <div
                       className="notification is-danger"
                       data-cy="PostsLoadingError"
