@@ -192,12 +192,12 @@ export const App = () => {
 
   const handleDeleteComment = async (commentId: number) => {
     setToastMessage('');
+    setCommentsFromServer(prev =>
+      prev ? prev.filter(comment => comment.id !== commentId) : null
+    );
 
     try {
       await client.delete(`/comments/${commentId}`);
-      setCommentsFromServer(prev =>
-        prev ? prev.filter(comment => comment.id !== commentId) : null
-      );
     } catch (error) {
       setLoadingError(prev => ({ ...prev, delete: true }));
       setToastMessage('Failed to delete comment.');
