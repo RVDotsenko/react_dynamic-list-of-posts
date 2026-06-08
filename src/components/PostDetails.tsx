@@ -53,7 +53,7 @@ export const PostDetails: React.FC<Props> = ({
             No comments yet
           </p>
         ) : (
-          <>
+          <React.Fragment>
             {isLoading.comments ? (
               <Loader />
             ) : (
@@ -93,7 +93,7 @@ export const PostDetails: React.FC<Props> = ({
                 })}
               </>
             )}
-          </>
+          </React.Fragment>
         )}
 
         {!newComment && !isLoading.comments && comments && (

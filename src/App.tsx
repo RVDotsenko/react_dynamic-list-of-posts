@@ -43,6 +43,7 @@ export const App = () => {
     posts: false,
     comments: false,
     newComment: false,
+    delete: false,
   });
 
   const [toastMessage, setToastMessage] = useState('');
@@ -224,8 +225,7 @@ export const App = () => {
                   <p data-cy="NoSelectedUser">No user selected</p>
                 )}
 
-                {loadingError.users ||
-                  (loadingError.posts && (
+                {loadingError.users && (loadingError.posts && (
                     <div
                       className="notification is-danger"
                       data-cy="PostsLoadingError"

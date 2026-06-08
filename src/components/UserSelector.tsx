@@ -29,7 +29,7 @@ export const UserSelector: React.FC<Props> = ({
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [onClickList]);
+  }, []);
 
   return (
     <div
